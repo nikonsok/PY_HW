@@ -29,3 +29,4 @@ def transform(old_format: Dict[int, List[str]]) -> Dict[str, int]:
     new_format = {}
     new_format = {value.lower(): key for key, values in old_format.items() for value in values}
     return new_format
+

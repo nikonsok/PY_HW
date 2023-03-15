@@ -1,6 +1,6 @@
 import pytest
 
-from hw1 import major_and_minor_elem
+from hw_1 import major_and_minor_elem
 
 LISTS = [
     ([2, 2, 1, 1, 1, 2, 2], (2, 1)), 
@@ -15,3 +15,4 @@ print(LISTS)
 )
 def test_major_and_minor_elem(numbers, expected):
     assert major_and_minor_elem(numbers) == expected
+
