@@ -24,9 +24,7 @@ from collections import Counter
 List = [randint(1,50) for i in range (150)]
 
 def major_and_minor_elem(inp: List) -> Tuple[int, int]:
-    cnt = Counter(List)
+    cnt = Counter(inp)
     max_key = max(cnt, key=cnt.get)
     min_key = min(cnt, key=cnt.get)
-    print(f'{max_key}, {min_key}')
-
-major_and_minor_elem(List)
+    return max_key, min_key

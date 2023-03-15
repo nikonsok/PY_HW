@@ -23,12 +23,9 @@ Output: {"a": 1, "d": 2, "e": 1, "g": 2}
 """
 from typing import Dict, List
 
-legacy_data = {1: ["A", "E"], 2: ["D", "G"]}
+old_format = {1: ["A", "E"], 2: ["D", "G"]}
 
-def transform(legacy_data: Dict[int, List[str]]) -> Dict[str, int]:
-    new_data = {}
-    new_data = {value.lower(): key for key, values in legacy_data.items() for value in values}
-    print (new_data)
-
-
-transform(legacy_data)
+def transform(old_format: Dict[int, List[str]]) -> Dict[str, int]:
+    new_format = {}
+    new_format = {value.lower(): key for key, values in old_format.items() for value in values}
+    return new_format

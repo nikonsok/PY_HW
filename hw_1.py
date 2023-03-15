@@ -33,5 +33,3 @@ def major_and_minor_elem(inp: List) -> Tuple[int, int]:
     max_key = max(cnt, key=cnt.get)
     min_key = min(cnt, key=cnt.get)
     return max_key, min_key
-
-
