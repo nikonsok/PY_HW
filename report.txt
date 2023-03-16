@@ -1,0 +1,8 @@
+Line 2: foo@example.com 729.83 EUR accountName 2021-01:0 validate_date
+Line 3: bar@example.com 729.83 accountName 2021-01-02 validate_line
+Line 4: baz@example.com 729.83 USD accountName ABCD-01-02 validate_date
+Line 5: baz@example.com 729.83 USD accountName 2021--02 validate_date
+Line 6: baz@example.com 729.83 USD accountName 2021:01:02 validate_date
+Line 7: baz@example.com 729.83 USD 2021-01- validate_date
+Line 8: baz@example.com 729.83 USD accountName !!!:{{:{{ validate_date
+Line 9: 2021-01-02 validate_line
