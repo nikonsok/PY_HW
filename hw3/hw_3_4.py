@@ -29,6 +29,3 @@ def combinations(*args: List[Any]) -> List[List]:
         for secnumbs in combinations(*args[1:]):
             result.append([fnumbs] + secnumbs)
     return result
-
-
-print(combinations([1, 2], [3, 4]))
