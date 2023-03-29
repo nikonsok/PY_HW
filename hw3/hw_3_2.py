@@ -14,8 +14,12 @@ from collections.abc import Callable
 
 
 def cache(func: Callable) -> Callable:
-    results = {}
+    cache = {}
     def wrapper(*args):
-        if results == func(*args):
-            return results[args]
+        if args in cache:
+            return cache[args]
+        else:
+            result = func(*args)
+            cache[args] = result
+            return result
     return wrapper

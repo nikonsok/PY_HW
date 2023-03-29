@@ -24,23 +24,27 @@ assert = custom_range(string.ascii_lowercase, 'g', 'p') == ['g', 'h', 'i', 'j', 
 assert = custom_range(string.ascii_lowercase, 'p', 'g', -2) == ['p', 'n', 'l', 'j', 'h']
 
 """
-
-
-def custom_range(begin, start = None, stop = None, step = 1):
-    if not start:
-        start = begin[0]
-    else: start = None
-    if not stop:
-        stop = begin[-1]
-    else: stop = None
-    start_id = begin[0]
-    stop_id = begin[-1]
-    if start_id < stop_id:
-        step = (-abs(step))
-    else: 
-        step = (abs(step))
-    print(f"{begin}, {type(begin)}\n{start}, {type(start)}\n{stop}, {type(stop)}\n{step}, {type(step)}")
-    return range(start, stop, step)
-
-begin = 'abcdefghijklmnopqrstuvwxyz'
-custom_range(begin)
+def custom_range(inc_data, *args):
+    if len(args) == 1:
+        start = 0
+        stop = inc_data.index(args[0])
+        step = 1
+    elif len(args) == 2:
+        start = inc_data.index(args[0])
+        stop = inc_data.index(args[1])
+        step = 1
+    elif len(args) == 3:
+        start = inc_data.index(args[0])
+        stop = inc_data.index(args[1])
+        step = args[-1]
+    if step < 0:
+        inc_data = inc_data[::-1]
+        start = len(inc_data) - 1 - start
+        stop = len(inc_data) - 1 - stop
+        step = abs(step)
+    result = []
+    i = start
+    while i < stop:
+        result.append(inc_data[i])
+        i += step
+    return result
