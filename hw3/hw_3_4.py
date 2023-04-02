@@ -14,16 +14,10 @@ assert combinations([1, 2], [3, 4]) == [
 
 
 from typing import Any, List
-
-def add():
-    return 123
-
+import itertools
 
 def combinations(*args: List[Any]) -> List[List]:
-    if not args:
-        return []
     result = []
-    for fnumbs in args[0]:
-        for secnumbs in combinations(*args[1:]):
-            result.append([fnumbs] + secnumbs)
+    for items in itertools.product(*args):
+        result.append(list(items))
     return result
