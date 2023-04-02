@@ -15,3 +15,4 @@ print(LISTS)
 )
 def test_major_and_minor_elem(numbers, expected):
     assert major_and_minor_elem(numbers) == expected
+

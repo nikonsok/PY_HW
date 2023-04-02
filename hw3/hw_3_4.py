@@ -10,16 +10,14 @@ assert combinations([1, 2], [3, 4]) == [
     [2, 3],
     [2, 4],
 ]
-
-_______________
-Напишите функцию, которая принимает в качестве аргументов K списков и возвращает все 
-возможные списки из K элементов, где первый элемент — из первого списка,
- второй — из второго и так далее. Вы можете предположить, 
- что каждый список содержит хотя бы один элемент
-
 """
-from typing import Any, List
 
+
+from typing import Any, List
+import itertools
 
 def combinations(*args: List[Any]) -> List[List]:
-    ...
+    result = []
+    for items in itertools.product(*args):
+        result.append(list(items))
+    return result
